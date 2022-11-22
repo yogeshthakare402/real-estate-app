@@ -1,0 +1,188 @@
+/* Property Listing Page */
+.property{
+    margin-top: 20px;
+    margin-left: 20px;
+    width: 80%;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    box-shadow:5px 0px 0px 5px gainsboro;
+    background-color: white;
+}
+.asideLeft{
+    width: 15%;
+    height: 100%;
+    background-color: aquamarine;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.asideRight{
+    width: 80%;
+}
+.logo{
+    margin-top: 10px;
+    width: 100px;
+    height: 100px;
+    border-radius: 58%;
+}
+.data{
+    height: 300px;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+}
+.header{
+    margin: 0 10px 0 10px;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid aquamarine;
+}
+.operations{
+    margin: 0 10px 0 10px;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+#PPDID{
+    width: 250px;
+    height: 50px;
+    border: none;
+    border-radius: 50px 50px;
+    box-shadow:5px 0px 0px 5px ghostwhite;
+    text-align: center;
+}
+.searchinput{
+    height: 50px;
+    border: none;
+    text-align: center;
+    border-radius: 50px 0 0 50px;
+    border-right: 2px solid rgb(167, 162, 162);
+}
+.searchbtn{
+    height: 50px;
+    background-color: white;
+    border: none;
+    text-align: center;
+    font-size: small;
+    border-radius: 0 50px 50px 0;
+}
+
+.searchinput:focus{
+    outline: none;
+  box-shadow: none;
+  text-align: center;
+}
+.addPropertybtn{
+    width: 250px;
+    height: 50px;
+    font-size: x-large;
+    text-decoration: none;
+    border: none;
+    border-radius: 50px 50px;
+    box-shadow:5px 0px 0px 5px ghostwhite;
+    text-align: center;
+    background-color: rgb(0, 255, 242);
+}
+
+.property-table{
+    margin-left: 10px;
+    width: 100%;
+}
+.tableHeader{
+    height: 50px;
+    color: rgb(0, 98, 255);
+    box-shadow: 5px 0px 0px 5px ghostwhite;
+}
+.tableData{
+    height: 50px;
+    box-shadow: 5px 0px 0px 5px ghostwhite;
+}
+
+/* Log in and sign up */
+.login{
+    margin: auto auto;
+    margin-top: 70px;
+    height: 473px;
+    width: 464px;
+    background-color:#FFFFFF;;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    flex-direction: column;
+    border-radius: 10px;
+}
+ .extra-info {
+     text-align: center;
+ }
+ #link{
+    margin-top: 20px;
+ }
+#logo-signup{
+    margin-top: 0px;
+    width: 100px;
+        height: 100px;
+        border-radius: 58%;
+}
+#logo{
+    width: 100px;
+    height: 100px;
+    border-radius: 58%;
+}
+.login-items{
+    margin-top: 30px;
+    height: 35px;
+    background-color: #FFFFFF;
+    width: 385px;
+    border-radius: 5px;
+}
+#signup{
+    color: #4C57B6;
+    text-decoration: none;
+    font-weight: bold;
+}
+#signin,#signup-btn{
+    background-color:#4C57B6;
+    width: 395px;
+    color: white;
+}
+#credential-signin{
+    /* margin-top:0; */
+    color: #000000;
+    font-size: small;
+}
+.extra-info,#extra-login{
+    margin-top: 30px;
+}
+.signup-items{
+    margin-top: 25px;
+        height: 30px;
+        background-color: #FFFFFF;
+        width: 385px;
+        border-radius: 5px;
+}
+#signup-btn{
+    width: 390px;
+}
+@media screen and (max-width: 360px) {
+    .login {
+        width: 300px;
+    }
+   .extra-info{
+    margin: auto auto;
+   }
+}
+
