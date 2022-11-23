@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import '../RealEstate.css'
 import {Link} from "react-router-dom";
-import property_detail from './PropertyDetail';
+import PropertyNav from './PropertyNav';
+{/*********import view page  */}
 
 export default function BasicInfo() {
   const [inputs, setInputs] = useState({});
 
   const handleChange = (event) => {
-    
+    setInputs(event.target.value)
   }
 
   const handleSubmit = (event) => {
@@ -16,6 +17,8 @@ export default function BasicInfo() {
   }
 
   return (
+    <>
+    <PropertyNav/>
     <div className='card'>
     <form method='POST' action='#' onSubmit={handleSubmit}>
         <section className='formSection'>
@@ -65,7 +68,7 @@ export default function BasicInfo() {
         <div className='formInput'>
             <label>Property Description</label>
             <input 
-            type="number" 
+            type="text" 
             name="description" 
             value={inputs.description || ""} 
             onChange={handleChange}
@@ -78,12 +81,16 @@ export default function BasicInfo() {
         </select>
         </div>
         
-        </section>
-        <div>
-            <button className='cancelBtn'>Cancel</button>
-            <Link to={"property_detail"}><button className='saveBtn'>Save & Continue</button></Link>
+        <div className='formInput'>
+            <button className='cancelBtn'>Cancel</button> {/************Add link for view page */}
         </div>
+        <div className='formInput'>
+            <Link style={{textDecoration: 'none'}} to={"/property_detail"}><button className='saveBtn'>Save & Continue</button></Link>
+            </div>
+        </section>
+        
     </form>
     </div>
+    </>
   )
 }
