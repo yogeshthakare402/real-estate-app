@@ -3,6 +3,7 @@ import '../RealEstate.css'
 import {Link} from "react-router-dom";
 import location_info from './LocationInfo';
 import property_detail from './PropertyDetail';
+import PropertyNav from './PropertyNav';
 
 export default function GeneralInfo() {
   const [inputs, setInputs] = useState({});
@@ -17,6 +18,8 @@ export default function GeneralInfo() {
   }
 
   return (
+  <>
+    <PropertyNav/>
     <div className='card'>
     <form method='POST' action='#' onSubmit={handleSubmit}>
         <section className='formSection'>
@@ -61,15 +64,23 @@ export default function GeneralInfo() {
         </select>
         </div>
         <div className='formInput'>
-            <div>Add Photo</div>
+            <span className='eclipseCamera'>
+                {/* <img src={require("/images/eclipse.png")} alt="select folder"/> */}
+                <img src='/images/camera.png' alt='camera' className='camera'/>
+            </span>
+            <span className='cameraText'>Add Photo</span>
         </div>
-        
+        <br/>
+        <div className='formInput'>
+            <Link style={{textDecoration: 'none'}} to={"/property_detail"}><button className='cancelBtn'>Cancel</button></Link>
+        </div>
+        <div className='formInput'>
+            <Link style={{textDecoration: 'none'}} to={"/location_info"}><button className='saveBtn'>Save & Continue</button></Link>
+        </div>
         </section>
-        <div>
-        <Link to={"property_detail"}><button className='cancelBtn'>Cancel</button></Link>
-            <Link to={"location_info"}><button className='saveBtn'>Save & Continue</button></Link>
-        </div>
+        
     </form>
     </div>
+    </>
   )
 }
