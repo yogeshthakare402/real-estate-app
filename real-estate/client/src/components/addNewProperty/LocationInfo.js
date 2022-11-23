@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import '../RealEstate.css'
 import {Link} from "react-router-dom";
 import general_info from './GeneralInfo';
+import PropertyNav from './PropertyNav';
 
-export default function BasicInfo() {
+export default function LocationInfo() {
   const [inputs, setInputs] = useState({});
 
   const handleChange = (event) => {
@@ -16,6 +17,8 @@ export default function BasicInfo() {
   }
 
   return (
+    <>
+    <PropertyNav/>
     <div className='card'>
     <form method='POST' action='#' onSubmit={handleSubmit}>
         <section className='formSection'>
@@ -88,13 +91,16 @@ export default function BasicInfo() {
                 onChange={handleChange}
             />
         </div>
-        
-        </section>
-        <div>
-        <Link to={"general_info"}><button className='cancelBtn'>Previous</button></Link>
-            <button className='saveBtn'>Add Property</button>
+        <div  className='formInput'>
+            <Link style={{textDecoration: 'none'}} to={"/general_info"}><button className='cancelBtn'>Previous</button></Link>
         </div>
+        <div className='formInput'>
+            <Link style={{textDecoration: 'none'}} to={"/basic_info"}><button className='saveBtn'>Add Property</button></Link>
+        </div>
+        </section>
+        
     </form>
     </div>
+    </>
   )
 }
