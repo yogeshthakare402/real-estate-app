@@ -3,8 +3,9 @@ import '../RealEstate.css';
 import {Link} from "react-router-dom";
 import general_info from './GeneralInfo';
 import basic_info from './BasicInfo';
+import PropertyNav from './PropertyNav';
 
-export default function BasicInfo() {
+export default function PropertyDetail() {
   const [inputs, setInputs] = useState({});
 
   const handleChange = (event) => {
@@ -17,6 +18,8 @@ export default function BasicInfo() {
   }
 
   return (
+    <>
+    <PropertyNav/>
     <div className='card'>
     <form method='POST' action='#' onSubmit={handleSubmit}>
         <section className='formSection'>
@@ -118,13 +121,17 @@ export default function BasicInfo() {
                 <option value="#">Select Facing</option>
             </select>
         </div>
-        
-        </section>
-        <div>
-        <Link to={"basic_info"}><button className='cancelBtn'>Cancel</button></Link>
-            <Link to={"general_info"}><button className='saveBtn'>Save & Continue</button></Link>
+        <br/>
+        <div className='formInput'>
+            <Link style={{textDecoration: 'none'}} to={"/basic_info"}><button className='cancelBtn'>Cancel</button></Link>
         </div>
+        <div className='formInput'>
+            <Link style={{textDecoration: 'none'}} to={"/general_info"}><button className='saveBtn'>Save & Continue</button></Link>
+        </div>
+        </section>
+        
     </form>
     </div>
+    </>
   )
 }
