@@ -3,35 +3,40 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const cors = require("cors");
-// we are using port 8080
-const port = process.env.PORT || 8080;
 
-
+const connect = require("./connection/connect");
+const authRoutes = require("./routes/authRoutes");
+const cookieParser = require("cookie-parser");
+const propertyListRoutes = require("./routes/property");
 const addPropertyRoutes = require("./routes/addProperty");
 
+const fileUpload = require("express-fileupload");
+
+// we are using port 8000
+const port = process.env.PORT || 8000;
+
 const app = express();
-// const uri = process.env.MONGODB_URI;
-const localURI = "mongodb://localhost/real_estate_app";
 
-// DB connection
-mongoose
-  .connect(localURI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-  })
-  .then(() => {
-    console.log("CONNECTED TO DATABASE");
-  });
+app.use(cors())
+app.use(express.json());
+app.use(express.urlencoded({extended:true}));
 
-app.use(cors());
-
+app.use(bodyParser.urlencoded({extended:true}));
 // middleware to convert our request data into JSON format
 app.use(bodyParser.json());
 
-// include the addPropertyRoutes
-app.use("/", addPropertyRoutes);
+app.use(cookieParser());
 
-// start the server in the port 3000
+// use fileupload
+app.use(fileUpload({
+  useTempFiles:true
+}))
+
+app.use("/api/users", authRoutes);
+app.use("/api/users", addPropertyRoutes);
+app.use("/api/users",propertyListRoutes);
+
+// start the server in the port 8000
 app.listen(port, () => {
   console.log(`Listening to http://localhost:${port}`);
 });
