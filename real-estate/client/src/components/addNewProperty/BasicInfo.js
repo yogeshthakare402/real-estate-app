@@ -1,27 +1,28 @@
 import React, { useState } from 'react';
 import '../RealEstate.css'
 import {Link} from "react-router-dom";
-{/*********import view page  */}
+import CommonPage from '../CommonPage';
+import PropertyNav from './PropertyNav';
 
-export default function BasicInfo({ nextStep, handleFormData, values }) {
+export default function BasicInfo( {nextStep, handleFormData, values }) {
+
+
 const submitFormData = (e) => {
     e.preventDefault();
-    
       nextStep();
-   
   };
 
-
   return (
-    <>
-    
     
     <div className='card'>
     <form method='POST' action='#' onSubmit={submitFormData}>
         <section className='formSection'>
         <div className='formInput'>
             <label>Property Type</label>
-            <select name="property" value={values.firstName} onChange={handleFormData("property")}>
+            <select name="property"
+             value={values.property} 
+            // value={}
+             onChange={handleFormData("property")}>
                 <option>Select Property Type</option>
                 <option value="Plot">Plot</option>
                 <option value="House">House</option>
@@ -76,22 +77,22 @@ const submitFormData = (e) => {
                 <option value="#">Bank Loan</option>
         </select>
         </div>
-        
+
         <div className='formInput'>
-            <Link to={"/hello"}>
-                <button className='cancelBtn'>Cancel</button> {/************Add link for view page */}
-            </Link>
+        <Link to={"/propertyListingPage"}><button className='cancelBtn'>Cancel</button></Link>
         </div>
         
         <div className='formInput'>
-            
+            {/* <Link style={{textDecoration: 'none'}} to={{pathname:"/property_detail",
+        data:inputs}}> */}
                 <button type='submit' className='saveBtn'>Save & Continue</button>
-            
+            {/* </Link> */}
             </div>
+
+            
         </section>
         
     </form>
     </div>
-    </>
   )
 }
