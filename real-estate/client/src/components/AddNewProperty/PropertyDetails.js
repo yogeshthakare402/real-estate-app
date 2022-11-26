@@ -4,23 +4,18 @@ import {Link} from "react-router-dom";
 import CommonPage from '../CommonPage';
 import PropertyNav from './PropertyNav';
 
-export default function PropertyDetail() {
-  const [inputs, setInputs] = useState({});
+export default function PropertyDetail({ nextStep, HandleFormData, prevStep, values }) {
 
-  const handleChange = (event) => {
-    
-  }
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    
-  }
+const submitFormData = (e) => {
+    e.preventDefault();
+      nextStep();
+  };
 
   return (
-    <CommonPage>
-    <PropertyNav/>
+    <>
+    {/* <PropertyNav/> */}
     <div className='card'>
-    <form method='POST' action='#' onSubmit={handleSubmit}>
+    <form method='POST' action='#' onSubmit={submitFormData}>
         <section className='formSection'>
         <div className='formInput'>
             <label>Length</label>
@@ -28,8 +23,8 @@ export default function PropertyDetail() {
                 type="text" 
                 name="length" 
                 placeholder='Example:10000'
-                value={inputs.length || ""} 
-                onChange={handleChange}
+                value={values.length || " "} 
+                onChange={HandleFormData("length")}
             />
         </div>
         <div className='formInput'>
@@ -38,8 +33,8 @@ export default function PropertyDetail() {
                 type="text" 
                 name="breadth" 
                 placeholder='Example:10000'
-                value={inputs.breadth || ""} 
-                onChange={handleChange}
+                value={values.breadth || ""} 
+                onChange={HandleFormData("breadth")}
             />
         </div>
         <div className='formInput'>
@@ -48,8 +43,8 @@ export default function PropertyDetail() {
                 type="text" 
                 name="area" 
                 placeholder='Example:10000'
-                value={inputs.area || ""} 
-                onChange={handleChange}
+                value={values.length * values.breadth || values.area || ""} 
+                onChange={HandleFormData("area")}
             />
         </div>
         <div className='formInput'>
@@ -58,49 +53,49 @@ export default function PropertyDetail() {
                 type="text" 
                 name="areaunit" 
                 placeholder='Example:10000'
-                value={inputs.areaunit || ""} 
-                onChange={handleChange}
+                // value={inputs.areaunit || ""} 
+                // onChange={handleChange}
             />
         </div>
         <div className='formInput'>
             <label>No of BHK</label>
-            <select value={inputs} onChange={handleChange}>
+            <select name='bhk'>
                 <option value="#">Select No of BHK</option>
             </select>
         </div>
         <div className='formInput'>
             <label>No of Floor</label>
-            <select value={inputs} onChange={handleChange}>
+            <select name='floor'>
                 <option value="#">Select No of Floor</option>
             </select>
         </div>
         <div className='formInput'>
             <label>Attached</label>
-            <select value={inputs} onChange={handleChange}>
+            <select name='attached'>
                 <option value="#">Select Attached</option>
             </select>
         </div>
         <div className='formInput'>
             <label>Western Toilet</label>
-            <select value={inputs} onChange={handleChange}>
+            <select name='westernToilet'>
                 <option value="#">Select Western Toilet</option>
         </select>
         </div>
         <div className='formInput'>
             <label>Furnished</label>
-            <select value={inputs} onChange={handleChange}>
+            <select name='furnished'>
                 <option value="#">Select Furnished</option>
             </select>
         </div>
         <div className='formInput'>
             <label>Car Parking</label>
-            <select value={inputs} onChange={handleChange}>
+            <select name='carParking'>
                 <option value="#">Select Car Parking</option>
             </select>
         </div>
         <div className='formInput'>
             <label>Lift</label>
-            <select value={inputs} onChange={handleChange}>
+            <select name='lift'>
                 <option value="#">Select Lift</option>
             </select>
         </div>
@@ -110,27 +105,30 @@ export default function PropertyDetail() {
                 type="text" 
                 name="electricity" 
                 placeholder='Example:3 phase'
-                value={inputs.electricity || ""} 
-                onChange={handleChange}
+                // value={inputs.electricity || ""} 
+                // onChange={handleChange}
             />
         </div>
         <div className='formInput'>
             <label>Facing</label>
-            <select value={inputs} onChange={handleChange}>
+            <select name='facing'>
                 <option value="#">Select Facing</option>
             </select>
         </div>
         <br/>
+
+
         <div className='formInput'>
-            <Link style={{textDecoration: 'none'}} to={"/basic_info"}><button className='cancelBtn'>Cancel</button></Link>
+                <button className='cancelBtn' onClick={prevStep}>Cancel</button>
         </div>
         <div className='formInput'>
-            <Link style={{textDecoration: 'none'}} to={"/general_info"}><button className='saveBtn'>Save & Continue</button></Link>
+                <button className='saveBtn'>Save & Continue</button>
         </div>
+
         </section>
         
     </form>
     </div>
-    </CommonPage>
+    </>
   )
 }

@@ -1,25 +1,41 @@
 // import React from "react";
 import './RealEstate.css';
-import React, { useEffect, useState } from "react";
+import React, {useState } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 function Signin() {
   const [details, setDetails] = useState({
-    UserId: "",
-    Password: "",
+    userid: "",
+    password: "",
   });
-  useEffect(() => {
-    console.log(details.UserId, details.Password);
-  });
-  const navigate = useNavigate();
-  const PropertyListingPage = ()=>{
-    navigate("/propertyListingPage");
-  }
 
+  const navigate = useNavigate();
+  async function onsubmits(e) {
+    e.preventDefault(e);
+    const { userid, password } = details;
+
+    axios
+      .post("http://localhost:8000/api/users/login", {
+        email: userid,
+        password: password,
+      })
+      .then((res) => {
+        localStorage.setItem("token", res.data.token);
+        localStorage.setItem("userid", res.data.details.userid);
+        localStorage.setItem("name", res.data.details.email);
+        navigate("/propertyListingPage");
+      })
+      .catch((err) => alert("Enter valid crendentials"));
+  }
+    // console.log(details);
+    // PropertyListingPage();
+  
 
 
   return (
+    <form onSubmit={(e) => onsubmits(e)}>
     <div className="container">
       <div className="login">
         <img
@@ -34,19 +50,19 @@ function Signin() {
         <input
           type="text"
           id="userid"
-          value={details.UserId}
-          onChange={(e) => setDetails({ ...details, UserId: e.target.value })}
+          value={details.userid}
+          onChange={(e) => setDetails({ ...details, userid: e.target.value })}
           className="login-items"
-          placeholder="         User ID"
+          placeholder="         Email ID"
         />
         <input
           type="password"
-          value={details.Password}
-          onChange={(e) => setDetails({ ...details, Password: e.target.value })}
+          value={details.password}
+          onChange={(e) => setDetails({ ...details, password: e.target.value })}
           className="login-items"
           placeholder="         Password"
         />
-        <button id="signin" className="login-items" onClick={PropertyListingPage}>
+        <button id="signin" className="login-items" onClick={(e)=>{onsubmits(e)}}>
           Sign In
         </button>
         <Link to="/signup" id="link">
@@ -60,6 +76,7 @@ function Signin() {
         Don’t have an account? <span id="extra-span">Sign up</span>
       </p>
     </div>
+    </form>
   );
 }
 
