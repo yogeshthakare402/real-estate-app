@@ -6,17 +6,15 @@ export const Nav = styled.nav`
 background: #FFFFFF;
 width:70%;
 margin:5% 13%;
-box-shadow: 10px 14px 70px rgba(0, 0, 0, 0.03);
+display: flex;
+flex-direction: row;
+justify-items: space-between;
+box-shadow: 10px 14px 70px rgba(0, 0, 0, 0.15);
 border-radius: 200px;
 transition: 0.3s;
-display: flex;
-justify-content: space-between;
-/* Third Nav */
-/* justify-content: flex-start; */
 `;
 
 export const NavLink = styled.div`
-
 display: flex;
 align-items: center;
 text-decoration: none;
@@ -39,16 +37,14 @@ font-style: normal;
 font-weight: 600;
 font-size: 20px;
 line-height: 25px;
-
 color: #FFFFFF;
 }
 `;
 
 
 export const NavSpan = styled.div`
-
 display: flex;
-align-items: center;
+align-items: left;
 text-decoration: none;
 padding: 5px 18px;
 margin-right: 0.4rem;
@@ -67,7 +63,7 @@ color: #A6A6A6;
 	border-radius: 100%;
     width: 10%;
     padding: 5px 18px;
-    text-align:center ;
+    text-align:left;
     color: #0F0F0F;
     background-color: #FFFFFF;
     box-sizing: border-box;
@@ -97,7 +93,7 @@ color: #808080;
 export const NavMenu = styled.div`
 display: flex;
 align-items: center;
-justify-content: space-between;
+justify-content: space-around;
 width:100%;
 /*margin-right: -24px;*/
 /* Second Nav */
@@ -107,5 +103,36 @@ width:100%;
 white-space: nowrap; */
 @media screen and (max-width: 768px) {
 	display: none;
+}
+`;
+
+export const NavBtn = styled.nav`
+display: flex;
+align-items: center;
+margin-right: 24px;
+/* Third Nav */
+/* justify-content: flex-end;
+width: 100vw; */
+@media screen and (max-width: 768px) {
+	display: none;
+}
+`;
+
+export const NavBtnLink = styled(Link)`
+border-radius: 4px;
+background: #808080;
+padding: 10px 22px;
+color: #000000;
+outline: none;
+border: none;
+cursor: pointer;
+transition: all 0.2s ease-in-out;
+text-decoration: none;
+/* Second Nav */
+margin-left: 24px;
+&:hover {
+	transition: all 0.2s ease-in-out;
+	background: #fff;
+	color: #808080;
 }
 `;
