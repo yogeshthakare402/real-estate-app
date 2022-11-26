@@ -1,12 +1,12 @@
 // import "./App.css";
 // import { Container, Row, Col } from "react-bootstrap";
 import { useState } from "react";
-import BasicInfo from "./AddNewProperty/BasicInfo";
-import PropertyDetail from "./AddNewProperty/PropertyDetails";
-import GeneralInfo from "./AddNewProperty/GeneralInfo";
-import LocationInfo from "./AddNewProperty/LocationInfo";
+import BasicInfo from "./addNewProperty/BasicInfo";
+import PropertyDetail from "./addNewProperty/PropertyDetails";
+import GeneralInfo from "./addNewProperty/GeneralInfo";
+import LocationInfo from "./addNewProperty/LocationInfo";
 import PropertyListingPage from "./PropertyListingPage";
-import PropertyNav from "./AddNewProperty/PropertyNav";
+import PropertyNav from "./addNewProperty/PropertyNav";
 import CommonPage from './CommonPage';
 
 function Form() {
