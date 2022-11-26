@@ -58,19 +58,25 @@ function Signin() {
           value={details.userid}
           onChange={(e) => setDetails({ ...details, userid: e.target.value })}
           className="login-items"
-          placeholder="         Email ID"
+          placeholder="User ID"
         />
         <input
           type="password"
+          id="pass"
           value={details.password}
           onChange={(e) => setDetails({ ...details, password: e.target.value })}
           className="login-items"
-          placeholder="         Password"
+          placeholder="Password"
         />
+
+        <span className="p-viewer">
+            <img src='/images/eye.png' alt='eye'/>
+        </span>
+
         <button id="signin" className="login-items" onClick={(e)=>{onsubmits(e)}}>
           Sign In
         </button>
-        <Link to="/signup" id="link">
+        <Link to="/signup" id="link" style={{textDecoration: 'none'}}>
           <span id="signup" className="login-items">
             Sign Up
           </span>
@@ -78,8 +84,11 @@ function Signin() {
       </div>
 
       <p className="extra-info">
-        Don’t have an account? <span id="extra-span">Sign up</span>
-      </p>
+        Don’t have an account?
+        <Link to="/signup" id="link" style={{textDecoration: 'none'}}>
+          <span id="extra-span">Sign up</span>
+          </Link>
+          </p>
     </div>
     </form>
   );
