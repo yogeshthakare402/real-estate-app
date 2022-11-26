@@ -1,18 +1,19 @@
 import React, { useState } from 'react';
 import '../RealEstate.css'
+import {Link} from "react-router-dom";
+import CommonPage from '../CommonPage';
+import PropertyNav from './PropertyNav';
 
 export default function GeneralInfo({ nextStep, handleFormData, prevStep, values }) {
 
 
 const submitFormData = (e) => {
     e.preventDefault();
-
       nextStep();
-  
+   
   };
 
   return (
-  <>
     <div className='card'>
     <form method='POST' action='#'  onSubmit={submitFormData}>
         <section className='formSection'>
@@ -58,26 +59,28 @@ const submitFormData = (e) => {
         </div>
         <div className='formInput'>
             <span className='eclipseCamera'>
-                
+                {/* <img src={require("/images/eclipse.png")} alt="select folder"/> */}
                 <img src='/images/camera.png' alt='camera' className='camera'/>
             </span>
             <span className='cameraText'>Add Photo</span>
         </div>
         <br/>
+
+
         <div className='formInput'>
-            
+            {/* <Link style={{textDecoration: 'none'}} to={"/property_detail"}> */}
                 <button className='cancelBtn' onClick={prevStep}>Cancel</button>
-                
+                {/* </Link> */}
         </div>
         <div className='formInput'>
-            
+            {/* <Link style={{textDecoration: 'none'}} to={"/location_info"}> */}
                 <button className='saveBtn' type='submit'>Save & Continue</button>
-                
+                {/* </Link> */}
         </div>
+
         </section>
         
     </form>
     </div>
-    </>
   )
 }
