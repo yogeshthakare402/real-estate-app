@@ -1,6 +1,6 @@
 import React from 'react';
 import '../RealEstate.css';
-
+// import {NavLink} from 'react-router-dom';
 import {
 Nav,
 NavLink,
@@ -9,9 +9,7 @@ Bars,
 NavMenu
 } from './PropertyNavElements';
 
-
 export default function PropertyNav({step, navStep}) {
-	
 
 	const changeStep = (event) => {
 		const stepNav = event.currentTarget.id;
@@ -30,9 +28,14 @@ export default function PropertyNav({step, navStep}) {
 		}
 
 	}
-return (
+	return (
 	<>
-   
+    {/* <ul>
+        <li><NavLink class="active" to="/basic_info" className="link">Home</NavLink></li>
+        <li><NavLink to="/property_detail" >News</NavLink></li>
+        <li><a href="#contact" className="link">Contact</a></li>
+        <li><a href="#about" className="link">About</a></li>
+    </ul> */}
 
 	<Nav>
 		<Bars />
@@ -52,9 +55,6 @@ return (
 		</NavLink>
 		</NavMenu>
 	</Nav>
-
-
 	</>
 );
 };
-
