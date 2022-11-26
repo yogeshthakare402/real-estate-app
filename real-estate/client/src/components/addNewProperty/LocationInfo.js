@@ -1,32 +1,34 @@
 import React, { useState } from 'react';
 import '../RealEstate.css'
-import axios from 'axios';
+import {Link} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import CommonPage from '../CommonPage';
+import PropertyNav from './PropertyNav';
 
 export default function LocationInfo({ nextStep, handleFormData, prevStep, values }) {
 
-
-const submitFormData = (e) => {
+const navigate = useNavigate();
+const submitFormData = async(e) => {
     e.preventDefault();
 
-     
-    axios
-        .post("http://localhost:8080/add_property", values
-        // , {headers: {
-        //     "Content-Type": "multipart/form-data",
-        //   },}
-        )
-        .then((res) => {
-        //   console.log(res);
-        })
-        .catch((err) => {
-        //   console.log(err);
-        });
+    await fetch("http://localhost:8000/api/users/property",{
+      method : 'POST',
+      headers : {
+          'Accept': 'application/json',
+          'Access-Control-Allow-Origin': 'http://localhost:3000',
+          "Access-Control-Allow-Methods": "GET, OPTIONS, POST, PUT",
+          'Access-Control-Allow-Credentials': 'true',
+          'Content-Type': 'application/json'
+      },
+      body : JSON.stringify({
+        values
+      })
+  }).then(navigate("/propertyListingPage"))
 
         nextStep();
   };
 
   return (
-    <>
     
     <div className='card'>
     <form method='POST' action='#' onSubmit={submitFormData}>
@@ -100,20 +102,21 @@ const submitFormData = (e) => {
                 // onChange={handleChange}
             />
         </div>
+
         <div  className='formInput'>
-           
+            {/* <Link style={{textDecoration: 'none'}} to={"/general_info"}> */}
                 <button className='cancelBtn' onClick={prevStep}>Previous</button>
-           
+            {/* </Link> */}
         </div>
         <div className='formInput'>
-           
+            {/* <Link style={{textDecoration: 'none'}} to={"/hello"}> */}
                 <button className='saveBtn' type='submit'>Add Property</button>
-            
+            {/* </Link> */}
         </div>
+
         </section>
         
     </form>
     </div>
-    </>
   )
 }
