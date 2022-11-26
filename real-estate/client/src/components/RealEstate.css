@@ -3,16 +3,17 @@
     margin-top: 10px;
     margin-left: 10px;
     width: 100%;
-    height: auto;
+    height: 100vh;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     box-shadow:5px 0px 0px 5px gainsboro;
     background-color: white;
+   
 }
 .asideLeft{
     width: 15%;
-    /* height: 100%; */
+    height: 100vh;
     background-color: aquamarine;
     display: flex;
     flex-direction: column;
@@ -20,7 +21,7 @@
 }
 .asideRight{
     width: 80%;
-    height: 6%;
+    height: 7%;
 }
 .logo{
     margin-top: 10px;
@@ -28,18 +29,58 @@
     height: 100px;
     border-radius: 58%;
 }
+
+/* .commonPage{ 
+    /* height: 100vh; */
+    /* overflow-y: scroll; */
+ /* }  */ 
 .data{
+    margin-top: 50px;
+    width: 90%;
     height: 300px;
     list-style-type: none;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
     justify-content: space-evenly;
+    align-items: flex-start;
+}
+.icons{
+    margin-right: 30px;
+}
+.iconsEye{
+    margin-right: 17px;
+}
+.open{
+    color: blue;
+}
+.iconsUsers{
+    margin-right: 5px;
+}
+/* .username{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+} */
+#logoutBtn {
+    border: 2px solid black;
+    padding: 0.3rem 0.5rem;
+    border-radius: 0.4rem;
+    background-color: aquamarine;
+
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 20px;
+    margin-top: 25px;
+}
+
+#logoutBtn:hover {
+    background-color: aqua;
+    color: black;
 }
 .header{
     margin: 0 10px 0 10px;
     width: 100%;
-    height: 50px;
+    height: 70px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -47,7 +88,15 @@
     justify-content: space-between;
     border-bottom: 2px solid aquamarine;
 }
+.userName{
+    width: 300px;
+    /* height: 15%; */
+    border: none;
+}
 .operations{
+    position: sticky;
+    top: 0px;
+    background:white;
     margin: 0 10px 0 10px;
     width: 100%;
     height: 100px;
@@ -100,9 +149,15 @@
 
 .property-table{
     margin-left: 10px;
-    width: 100%;
+    width: 98%;
+    overflow-y: scroll;
+    box-shadow: 5px 0px 0px 5px ghostwhite;
 }
+
 .tableHeader{
+    position: sticky;
+    top: 100px;
+    background:white;
     height: 50px;
     color: rgb(0, 98, 255);
     box-shadow: 5px 0px 0px 5px ghostwhite;
@@ -115,6 +170,36 @@
 .noList{
     padding-top: 100px;
 }
+.imagetag{
+    width: 50px;
+}
+
+.edit{
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row;
+    align-self: flex-end;
+    justify-content: center;
+}
+.iconsEdit{
+    margin-right: 10px;
+    /* width: 20px; */
+}
+.unSoldbtn{
+    border: none;
+    padding: 0.3rem 0.5rem;
+    border-radius: 0.4rem;
+    background-color: aquamarine;
+
+    font-weight: bold;
+    cursor: pointer;
+}
+.unSoldbtn:hover {
+    background-color: aqua;
+    color: black;
+}
+
+
 /* Log in and sign up */
 .login{
     margin: auto auto;
@@ -181,6 +266,20 @@
 #signup-btn{
     width: 390px;
 }
+.confirmSignin{
+    padding: 10px;
+    background-color: #FFFFFF;
+    border: 2px solid black;
+    border-radius: 10px;
+    font-size: xx-large;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
 @media screen and (max-width: 360px) {
     .login {
         width: 300px;
@@ -197,11 +296,13 @@
 .card{
     margin: 5% 10%;
     width: 75%;
-    /* box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); */
-    box-shadow: 10px 14px 70px rgba(0,0,0,0.03);
+    height: 700px;
+    /* box-shadow: 10px 14px 70px rgba(0,0,0,0.03); */
+    box-shadow: 10px 14px 70px rgba(0, 0, 0, 0.15);
     transition: 0.3s;
     border-radius: 20px; 
     text-align: left;
+    overflow-y: scroll;
 }
 
 .formSection {
@@ -263,11 +364,29 @@
   }
 
   /****************GeneralInfo.js ****************/
-
+  .formInput #camera{
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 25px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .cameraimg{
+    align-self: center;
+    background: #6AB4F8;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.13);
+    padding: 20px 20px 20px 20px;
+    border-radius: 40%;
+    margin-right: 10px;
+  }
+  
   .eclipseCamera{
     background: #6AB4F8;
     box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.13);
-    padding: 45px 28px 30px 28px;
+    padding: 30px 28px 30px 28px;
     border-radius: 100%;
     margin-right: 10px;
   }
@@ -283,5 +402,63 @@
     right: 0px; */
     /* height:80px; */
     
+  }
+
+  /* Add Property navbar */
+
+
+  .addProperty{
+    width: 100%;
+    /* background-color: greenyellow; */
+    display: flex;
+    flex-direction: column;
+  }
+  .addhead{
+    margin-left: 10px;
+    width: fit-content;
+    float: left;
+    color: #AAAAAA;
+  }
+  .navbar {
+      margin-left: 10%;
+      width: 70%;
+      height: 50px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      background-color: white;
+      font-family: 'Source Sans Pro';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 25px;
+      color: #AAAAAA;
+      border-radius: 50px;
+      box-shadow: 10px 14px 70px rgba(0, 0, 0, 0.15);
+  }
+  .navForm{
+    width: 25%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 50px;
+    background-color: aqua;
+  }
+  .num {
+      background-color: aquamarine;
+      cursor: pointer;
+      box-sizing: border-box;
+      border-radius: 100%;
+      width: 12%;
+      font-family: 'Source Sans Pro';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 25px;
+      background-color: #E1F9F4;
+      color: #A6A6A6;
   }
 
