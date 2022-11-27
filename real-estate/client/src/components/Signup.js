@@ -54,22 +54,23 @@ function Signup() {
  
 
   return (
+    <div className='container-main'>
       <form onSubmit={handleSubmit(onSubmit)}
     >
       <div className="container">
-        <div className="login" id="logid">
+        <div className="signup-container" id="logid">
           <img
             id="logo-signup"
             className="signup-items"
             alt="logo"
             src="/images/logo.png"
           />
-          <span id="credential-signup" className="login-items">
+          <div id="credential-signup" className="login-items">
             Create New Account
-          </span>
+          </div>
           <input
             type="email"
-            placeholder="         Email-id"
+            placeholder="Mail ID"
             className="signup-items"
             {...register("email", {
               required: "Please Enter Your Email!",
@@ -89,7 +90,7 @@ function Signup() {
 
           <input
             type="password"
-            placeholder="         Password"
+            placeholder="Password"
             className="signup-items"
             {...register("password", {
               required: "Please Enter Your Password",
@@ -111,7 +112,7 @@ function Signup() {
 
           <input
             type="password"
-            placeholder="         Confirm Password"
+            placeholder="Confirm Password"
             className="signup-items"
             {...register("confirmPassword", {
               required: "Please Confirm Your Password",
@@ -138,13 +139,20 @@ function Signup() {
             Sign Up
           </button>
         </div>
-        <Link to="/" id="signinlinktag">
-          <p className="extra-info">
+        <div className="sign-in-btn">
+        <Link to="/" id="signinlinktag" style={{
+          textDecoration: 'none',marginTop: '80px',fontFamily: 'Open Sans',fontStyle: 'normal',
+          fontWeight: '600',fontSize: '18px',lineHeight: '22px',letterSpacing:'0.25px',
+          color: '#352D66'
+          }}>
+          <p>
             <span>Sign In</span>
           </p>
         </Link>
+        </div>
       </div>
     </form>
+    </div>
   );
 }
 
