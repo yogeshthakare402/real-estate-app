@@ -40,6 +40,7 @@ function Signin() {
 
 
   return (
+    <div className='container-main'>
     <form onSubmit={(e) => onsubmits(e)}>
     <div className="container">
       <div className="login">
@@ -49,9 +50,9 @@ function Signin() {
           alt="logo"
           src="/images/logo.png"
         />
-        <span id="credential-signin" className="login-items">
+        <div id="credential-signin" className="login-items">
           Enter your credentials to access your account
-        </span>
+        </div>
         <input
           type="text"
           id="userid"
@@ -76,7 +77,7 @@ function Signin() {
         <button id="signin" className="login-items" onClick={(e)=>{onsubmits(e)}}>
           Sign In
         </button>
-        <Link to="/signup" id="link" style={{textDecoration: 'none'}}>
+        <Link to="/signup" id="link" style={{textDecoration: 'none', marginTop: '50px'}}>
           <span id="signup" className="login-items">
             Sign Up
           </span>
@@ -91,6 +92,7 @@ function Signin() {
           </p>
     </div>
     </form>
+    </div>
   );
 }
 
