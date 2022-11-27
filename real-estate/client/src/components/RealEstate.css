@@ -296,7 +296,7 @@
 .card{
     margin: 5% 10%;
     width: 75%;
-    height: 700px;
+    height: 650px;
     /* box-shadow: 10px 14px 70px rgba(0,0,0,0.03); */
     box-shadow: 10px 14px 70px rgba(0, 0, 0, 0.15);
     transition: 0.3s;

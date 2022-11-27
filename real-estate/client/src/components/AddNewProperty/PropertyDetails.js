@@ -23,7 +23,7 @@ const submitFormData = (e) => {
                 type="text" 
                 name="length" 
                 placeholder='Example:10000'
-                value={values.length || " "} 
+                value={values.length || ""} 
                 onChange={HandleFormData("length")}
             />
         </div>
