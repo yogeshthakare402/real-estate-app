@@ -1,27 +1,313 @@
-/* Property Listing Page */
-.property{
-    margin-top: 10px;
-    margin-left: 10px;
-    width: 100%;
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+
+/* Log in and sign up */
+
+.container-main{
+    background: #E1F9F4;
+    /* background: red; */
     height: 100vh;
+    width:100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    text-align: center;
+}
+
+.login{
+    margin: auto auto;
+    padding-top: 100px;
+    height: 400px;
+    width: 350px;
+    background-color:#FFFFFF;;
+    
+    padding: 30px 30px;
+    flex-direction: column;
+    border-radius: 10px;
+}
+
+.signup-container{
+    margin: auto auto;
+    padding-top: 80px;
+    height: 450px;
+    width: 350px;
+    background-color:#FFFFFF;;
+    
+    padding: 20px 30px;
+    flex-direction: column;
+    border-radius: 10px;
+}
+ .extra-info{
+     text-align: center;
+     
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+
+    /* display: flex;
+    align-items: center;
+    text-align: center; */
+    letter-spacing: 0.25px;
+
+    color: #000000;
+
+    opacity: 0.6;
+ }
+
+ #extra-span{
+    font-family: 'Open Sans';
+font-style: normal;
+font-weight: 600;
+font-size: 18px;
+line-height: 22px;
+/* identical to box height, or 122% */
+
+/* display: flex;
+align-items: center;
+text-align: center; */
+letter-spacing: 0.25px;
+color: #4C57B6;
+ }
+ #link{
+    margin-top: 20px;
+ }
+#logo-signup{
+    /* margin-top: 0px; */
+    width: 100px;
+        height: 100px;
+        border-radius: 58%;
+        /* margin: 0 0 0 80px; */
+}
+#logo{
+    /* margin: auto auto; */
+    margin-left: 10px;
+    width: 100px;
+    height: 100px;
+    border-radius: 58%;
+}
+.login-items{
+    margin-top: 20px;
+    height: 35px;
+    background-color: #FFFFFF;
+    width: 300px;
+    border-radius: 5px;
+
+}
+
+#userid, #pass{
+    background: #FFFFFF;
+    border: 1px solid #E2E2E2;
+    border-radius: 5px;
+    padding: 10px 20px;
+
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    /* identical to box height, or 120% */
+
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.25px;
+
+    color: #000000;
+
+    /* opacity: 0.4; */
+}
+
+.p-viewer{
+    /* float: right; */
+    top: -33px;
+    right: -150px;
+    position: relative;
+    /* z-index: 1; */
+    cursor:pointer;
+  }
+  
+
+#signup{
+    color: #4C57B6;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 20px;
+}
+#signin{
+    background-color:#4C57B6;
+    width: 340px;
+    padding: 15px 30px 30px 30px;
+    color: white;
+    border-radius: 5px;
+    border: none;
+}
+
+#credential-signin{
+    margin: auto auto;
+    color: #000000;
+    /* font-size: small; */
+    /* margin-left: 20px; */
+    margin-bottom: 20px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 22px;
+
+    /* display: flex;
+    align-items: center;
+    text-align: center; */
+    letter-spacing: 0.25px;
+
+    color: #000000;
+
+    opacity: 0.6;
+}
+.extra-info,#extra-login{
+    margin-top: 30px;
+
+}
+
+.signup-items{
+    margin-top: 25px;
+       padding: 10px 20px;
+        background-color: #FFFFFF;
+        width: 300px;
+        
+}
+#signup-btn{
+    width: 330px;
+    background: #4C57B6;
+border-radius: 5px;
+border: none;
+color:  #FFFFFF;
+}
+.confirmSignin{
+    padding: 10px;
+    background-color: #FFFFFF;
+    border: 2px solid black;
+    border-radius: 10px;
+    font-size: xx-large;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#credential-signup{
+    /* margin-left: 20px; */
+    margin: auto auto;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 22px;
+    /* identical to box height, or 147% */
+
+    /* display: flex;
+    align-items: center;
+    text-align: center; */
+    letter-spacing: 0.25px;
+
+    color: #000000;
+
+    opacity: 0.6;
+}
+
+#mailId, #pass-signup, #confirmpass-signup{
+    background: #FFFFFF;
+border: 1px solid #E2E2E2;
+border-radius: 5px;
+
+font-family: 'Open Sans';
+font-style: normal;
+font-weight: 400;
+font-size: 15px;
+line-height: 18px;
+/* identical to box height, or 120% */
+
+/* display: flex;
+align-items: center; */
+letter-spacing: 0.25px;
+
+color: #000000;
+
+opacity: 0.4;
+}
+
+#sign-in-btn{
+    margin-top: 30px;
+    font-family: 'Open Sans';
+font-style: normal;
+font-weight: 600;
+font-size: 18px;
+line-height: 22px;
+/* identical to box height, or 122% */
+
+/* display: flex;
+align-items: center;
+text-align: center; */
+letter-spacing: 0.25px;
+
+/* #352D66 */
+
+color: #352D66;
+}
+
+@media screen and (max-width: 360px) {
+    .login {
+        width: 300px;
+    }
+   .extra-info{
+    margin: auto auto;
+   }
+}
+
+/* Property Listing Page */
+
+.property-main{
+    margin: 0;
+    padding: 0;
+    /* background-color: red; */
+    box-sizing: border-box;
+}
+
+.property{
+    
+    width: 100%;
+    /* height: 100vh; */
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     box-shadow:5px 0px 0px 5px gainsboro;
     background-color: white;
-    overflow: scroll;
 }
+
 .asideLeft{
-    width: 15%;
-    /* height: 100%; */
-    background-color: aquamarine;
+    width: 18%;
+    height: 100vh;
+    background: #E1F9F4;
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: fixed;
+}
+.head{
+width: 18%;
 }
 .asideRight{
-    width: 80%;
-    height: 6%;
+    width: 81%;
+    height: 7%;
+    /* margin-left: 245px; */
 }
 .logo{
     margin-top: 10px;
@@ -29,28 +315,86 @@
     height: 100px;
     border-radius: 58%;
 }
-.commonPage{
-    height: 100vh;
-    overflow-y: scroll;
-}
+
+.commonPage{ 
+    /* height: 100vh; */
+    /* overflow-y: scroll; */
+    margin-left: 20px;
+    margin-right: 20px;
+ } 
 .data{
-    height: 300px;
+    /* height: 300px; */
+    /* background-color: red; */
+    margin: 20px 0px;
     list-style-type: none;
-    display: flex;
+    /* display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: space-evenly;
+    justify-content: space-evenly; */
+}
+
+.data li{
+    margin: 20px 0px;
+    /* margin-left: 20px; */
+    font-family: 'Source Sans Pro';
+font-style: normal;
+font-weight: 300;
+font-size: 15px;
+line-height: 35px;
+color: #AAAAAA;
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* align-items: flex-start; */
+    /* justify-content: space-evenly; */
+}
+.data b{
+    color: #2289FF;
+}
+.data img{
+    margin-right: 20px;
 }
 .header{
-    margin: 0 10px 0 10px;
+    margin: 0 10px 0 0px;
     width: 100%;
-    height: 50px;
+    height: 70px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 2px solid aquamarine;
+    border-bottom: 2px solid #E1F9F4;
+}
+
+.header-id{
+    font-family: 'Source Sans Pro';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 25px;
+
+color: #B4B4C6;
+
+margin-left: 15px;
+}
+
+.header-username{
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 25px;
+    
+    color: #B4B4C6;
+    margin-right: 25px;
+}
+
+.header-username img{
+    margin: 0 10px 0 0;
+    height: 20px;
+}
+.userName{
+    width: 200px;
+    /* height: 15%; */
 }
 .operations{
     position: sticky;
@@ -69,24 +413,36 @@
     width: 250px;
     height: 50px;
     border: none;
-    border-radius: 50px 50px;
-    box-shadow:5px 0px 0px 5px ghostwhite;
+    /* border-radius: 50px; */
+    background: #FFFFFF;
+    box-shadow: 0px 13px 25px rgba(0, 0, 0, 0.15);
+    border-radius: 500px;
+    /* box-shadow:5px 0px 0px 5px ghostwhite; */
     text-align: center;
 }
 .searchinput{
-    height: 50px;
+    font-family: 'Source Sans Pro';
+font-style: normal;
+font-weight: 400;
+font-size: 15px;
+line-height: 25px;
+
+color: #BCBCBC;
     border: none;
-    text-align: center;
-    border-radius: 50px 0 0 50px;
-    border-right: 2px solid rgb(167, 162, 162);
+    border-right: 1px solid #E6E6E6;
 }
 .searchbtn{
-    height: 50px;
+    
     background-color: white;
     border: none;
-    text-align: center;
-    font-size: small;
-    border-radius: 0 50px 50px 0;
+    /* text-align: center;
+    font-size: small; */
+    /* border-radius: 0 50px 50px 0; */
+}
+
+.searchbtn img{
+    margin: 13px 0 0 20px;
+    height: 20px;
 }
 
 .searchinput:focus{
@@ -95,127 +451,102 @@
   text-align: center;
 }
 .addPropertybtn{
-    width: 250px;
-    height: 50px;
-    font-size: x-large;
+    /* width: 150px; */
+    padding: 15px 20px;
     text-decoration: none;
     border: none;
-    border-radius: 50px 50px;
-    box-shadow:5px 0px 0px 5px ghostwhite;
+    background: #6AB4F8;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.13);
     text-align: center;
-    background-color: rgb(0, 255, 242);
+    border-radius: 500px;
 }
 
 .property-table{
-    margin-left: 10px;
-    width: 100%;
+    /* margin-left: 10px; */
+    width: 98%;
     overflow-y: scroll;
 }
+
 .tableHeader{
-    position: sticky;
-    top: 100px;
-    background:white;
-    height: 50px;
-    color: rgb(0, 98, 255);
-    box-shadow: 5px 0px 0px 5px ghostwhite;
+    /* position: sticky; */
+    /* top: 100px; */
+    background: #FFFFFF;
+    box-shadow: 0px 13px 25px rgba(0, 0, 0, 0.15);
+    font-family: 'Source Sans Pro';
+font-style: normal;
+font-weight: 400;
+font-size: 15px;
+line-height: 25px;
+
+color: #284E91;
 }
-.tableData{
-    height: 50px;
-    box-shadow: 5px 0px 0px 5px ghostwhite;
+
+.tableHeader th{
+    padding: 15px 0px;
+}
+.tbody{
+    
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 25px;
+    border: none;
+    text-align: center;
+    margin: 10px 0;
+}
+.tableData td{
+    padding: 10px 0px;
+    border: none;
+    
+    background: #FFFFFF;
+    box-sizing: border-box;
+    box-shadow: 0px 13px 25px rgba(0, 0, 0, 0.15);
+}
+.sold-btn{
+    background: #F5FAF5;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.13);
+    border-radius: 500px;
+    font-family: 'Catamaran';
+font-style: normal;
+font-weight: 500;
+font-size: 15px;
+line-height: 33px;
+/* identical to box height */
+border: none;
+
+color: #416899;
+padding:5px 20px;
 }
 
 .noList{
     padding-top: 100px;
 }
-/* Log in and sign up */
-.login{
-    margin: auto auto;
-    margin-top: 70px;
-    height: 473px;
-    width: 464px;
-    background-color:#FFFFFF;;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 40px;
-    flex-direction: column;
-    border-radius: 10px;
-}
- .extra-info {
-     text-align: center;
- }
- #link{
-    margin-top: 20px;
- }
-#logo-signup{
-    margin-top: 0px;
-    width: 100px;
-        height: 100px;
-        border-radius: 58%;
-}
-#logo{
-    width: 100px;
-    height: 100px;
-    border-radius: 58%;
-}
-.login-items{
-    margin-top: 30px;
-    height: 35px;
-    background-color: #FFFFFF;
-    width: 385px;
-    border-radius: 5px;
-}
-#signup{
-    color: #4C57B6;
-    text-decoration: none;
-    font-weight: bold;
-}
-#signin,#signup-btn{
-    background-color:#4C57B6;
-    width: 395px;
-    color: white;
-}
-#credential-signin{
-    /* margin-top:0; */
-    color: #000000;
-    font-size: small;
-}
-.extra-info,#extra-login{
-    margin-top: 30px;
-}
-.signup-items{
-    margin-top: 25px;
-        height: 30px;
-        background-color: #FFFFFF;
-        width: 385px;
-        border-radius: 5px;
-}
-#signup-btn{
-    width: 390px;
-}
-.confirmSignin{
-    padding: 10px;
-    background-color: #FFFFFF;
-    border: 2px solid black;
-    border-radius: 10px;
-    font-size: xx-large;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-}
-@media screen and (max-width: 360px) {
-    .login {
-        width: 300px;
-    }
-   .extra-info{
-    margin: auto auto;
-   }
+.imagetag{
+    width: 50px;
 }
 
+.edit{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+.editImage{
+    width: 20px;
+}
+
+
+/* @media screen and (max-width: 480px) {
+    .asideLeft {
+        width: 18%;
+        position: fixed;
+    }
+   .asideRight{
+    width: 81%;
+    margin-left: 20px;
+   }
+} */
 
 /****************BasicInfo.js, PropertyDetails.js, GeneralInfo.js, LocationInfo.js ********************/
 /* Add New Property CSS */
@@ -288,7 +619,25 @@
   }
 
   /****************GeneralInfo.js ****************/
-  .formInput #camera{
+
+  .eclipseCamera{
+    background: #6AB4F8;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.13);
+    padding: 40px 28px 30px 28px;
+    border-radius: 100%;
+    margin-right: 10px;
+  }
+
+  .cameraText{
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 23px;
+    color: #7D7D7D;
+  }
+
+  /* .formInput #camera{
     font-family: 'Source Sans Pro';
     font-style: normal;
     font-weight: 600;
@@ -305,29 +654,7 @@
     padding: 20px 20px 20px 20px;
     border-radius: 40%;
     margin-right: 10px;
-  }
-  
-  /* .eclipseCamera{ */
-    /* background: #6AB4F8; */
-    /* box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.13); */
-    /* padding: 28px 28px 28px 28px; */
-    /* border-radius: 50%; */
-    /* margin-right: 10px; */
-    /* border: 0.5px solid black; */
-  /* } */
-
-  /* .cameraText{
-    font-family: 'Source Sans Pro';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 23px;
-    color: #7D7D7D; */
-    /* top: 0px; 
-    right: 0px; */
-    /* height:80px; */
-    
-  /* } */
+  } */
 
   /* Add Property navbar */
 
