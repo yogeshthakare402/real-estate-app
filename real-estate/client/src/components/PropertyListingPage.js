@@ -3,6 +3,7 @@ import { useState,useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import CommonPage from './CommonPage';
 import './RealEstate.css';
+// import FullPage, { FullScreen, useFullScreenHandle } from "react-full-screen";
 
 function PropertyListingPage() {
     //to search PPDID
@@ -58,16 +59,23 @@ function PropertyListingPage() {
 
     return (
         <>
+        {/* <FullPage> */}
+        <div className='property-main'>
             <CommonPage>
                 <div className='operations'>
                     <div id="PPDID">
                         <form action="" method='GET' onSubmit={getPropertyDetails}>
                             <input className='searchinput' type="text" value={PPDID} name="searchPPD" placeholder='Search PPD ID' onChange={(e) => setPPDID(e.target.value)} />
-                            <button className='searchbtn'>Search</button>
+                            <button className='searchbtn'>
+                                <img src='/images/search.png'  alt='search'/>
+                            </button>
                         </form>
                     </div>
                     <button className='addPropertybtn'>
-                     <Link to={"/form"}>+ Add Property</Link> 
+                     <Link to={"/form"} 
+                     style={{textDecoration: 'none',fontFamily: 'Source Sans Pro',fontStyle: 'normal',
+                            fontWeight: '600',fontSize: '20px',lineHeight: '25px',color: '#FFFFFF'}}>
+                                + Add Property</Link> 
                     </button>
                 </div>
 
@@ -88,17 +96,20 @@ function PropertyListingPage() {
                     
                     {showProperty ? 
                     propertyList.property.map((data,index)=>{
-                        return <tbody key={index}>
+                        return <tbody key={index} className="tbody">
                         <tr className='tableData'>
                             <td>{data.ppdId}</td>
-                            <td>Image</td>
+                            <td><img src='/images/image.png'  alt='image'/></td>
                             <td>{data.property}</td>
                             <td>{data.contact}</td>
                             <td>{data.area}</td>
                             <td>{data.views}</td>
-                            <td><button onClick={(e)=>changeStatus(e)}>Unsold</button></td>
+                            <td><button className='sold-btn' onClick={(e)=>changeStatus(e)}>Unsold</button></td>
                             <td>{data.daysLeft}</td>
-                            <td>Action</td>
+                            <td>
+                                <img src='/images/action.png'  alt='action'/>
+                                <img src='/images/edit.png'  alt='edit'/>
+                            </td>
                         </tr>
                     </tbody>
                     })
@@ -110,14 +121,17 @@ function PropertyListingPage() {
                             return <tbody key={index}>
                                 <tr className='tableData'>
                                     <td>{data.ppdId}</td>
-                                    <td>Image</td>
+                                    <td><img src='/images/image.png'  alt='image'/></td>
                                     <td>{data.property}</td>
                                     <td>{data.contact}</td>
                                     <td>{data.area}</td>
                                     <td>{data.views}</td>
-                                    <td><button onClick={(e)=>changeStatus(e)}>Unsold</button></td>
+                                    <td><button  className='sold-btn' onClick={(e)=>changeStatus(e)}>Unsold</button></td>
                                     <td>{data.daysLeft}</td>
-                                    <td>Action</td>
+                                    <td>
+                                        <img src='/images/action.png'  alt='action'/>
+                                        <img src='/images/edit.png'  alt='edit'/>
+                                    </td>
                                 </tr>
                             </tbody>
                         }
@@ -126,6 +140,8 @@ function PropertyListingPage() {
                     
                 </table>
             </CommonPage>
+            {/* </FullPage> */}
+            </div>
         </>
     )
 }
