@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import '../RealEstate.css';
-import {Link} from "react-router-dom";
-import CommonPage from '../CommonPage';
-import PropertyNav from './PropertyNav';
+// import {Link} from "react-router-dom";
+// import CommonPage from '../CommonPage';
+// import PropertyNav from './PropertyNav';
 
 export default function PropertyDetail({ nextStep, HandleFormData, prevStep, values }) {
 

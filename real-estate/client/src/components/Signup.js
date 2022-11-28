@@ -23,7 +23,7 @@ function Signup() {
   const navigate = useNavigate();
 
   async function onSubmit(data) {
-    const { email, password, confirmPassword } = sigupDetails;
+    const { email, password } = sigupDetails;
     // console.log(data);
 
     axios

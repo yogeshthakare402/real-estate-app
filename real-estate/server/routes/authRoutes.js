@@ -85,30 +85,6 @@ authRoutes.get("/logout", async (req, res) => {
   res.redirect("/");
 });
 
-// authRoutes.get("/user", async (req, res) => {
-//   try {
-//     console.log(req.body);
-//     // console.log(req.body);
-//     const existingUser = await User.findOne({email:userName});
-
-//     if(existingUser){
-//       res.json({
-//           status: "Sucess",
-//           existingUser
-//       })
-//   }else {
-//       res.json({
-//           status: "Failed",
-//           message : "User Not Found"
-//       })
-//   }
-//   } catch (e) {
-//     res.json({
-//       status: "Failed",
-//       message: e.message,
-//     });
-//   }
-// });
 
 authRoutes.get("/protected", authVerify, (req, res) => {
   res.send("I am protected route");

@@ -5,13 +5,6 @@ const User = require('../models/User');
 // const cloudinary = require('cloudinary').v2;
 const router = express.Router();
 
-// cloudinary.config({
-//     cloud_name: 'dcip3zcp4',
-//     api_key: '761659471794486',
-//     api_secret: 'j_ETkpzIDJs0_Y6uCFtL8Utf2Qw',
-//     secure: true
-// });
-
 router.use(bodyParser.json());
 
 router.get('/property', async(req, res) => {
