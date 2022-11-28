@@ -238,6 +238,10 @@
     width: 385px;
     border-radius: 5px;
 }
+
+.error{
+    color: red;
+}
 #signup{
     color: #4C57B6;
     text-decoration: none;
@@ -256,8 +260,15 @@
 .extra-info,#extra-login{
     margin-top: 30px;
 }
-.signup-items{
+.signup-items1{
     margin-top: 25px;
+        height: 30px;
+        background-color: #FFFFFF;
+        width: 385px;
+        border-radius: 5px;
+}
+.signup-items{
+    /* margin-top: 5px; */
         height: 30px;
         background-color: #FFFFFF;
         width: 385px;

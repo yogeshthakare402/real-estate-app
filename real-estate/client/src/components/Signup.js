@@ -53,7 +53,7 @@ function Signup() {
           <input
             type="email"
             placeholder="         Email-id"
-            className="signup-items"
+            className="signup-items1"
             {...register("email", {
               required: "Please Enter Your Email!",
               pattern: {
