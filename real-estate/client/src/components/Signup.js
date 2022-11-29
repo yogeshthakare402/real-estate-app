@@ -24,7 +24,6 @@ function Signup() {
 
   async function onSubmit(data) {
     const { email, password } = sigupDetails;
-    // console.log(data);
 
     axios
       .post("http://localhost:8000/api/users/signup", {
@@ -32,7 +31,7 @@ function Signup() {
         password: password,
       })
       .then((res) => navigate("/"))
-      .catch((err) => alert("Email already exist"));
+      .catch((err) => alert("Email already Exists"));
   }
  
 

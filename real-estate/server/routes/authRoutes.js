@@ -2,21 +2,24 @@ const express = require("express");
 const authRoutes = express.Router();
 const { tokenGenerator } = require("../Bcrypt/token");
 const bodyParser = require("body-parser");
-const User = require("../models/User");
-const authVerify = require("../Bcrypt/authVerify");
+let User = require("../models/user");
+// const authVerify = require("../Bcrypt/authVerify");
 const { hashGenerate } = require("../Bcrypt/Hashing");
 const { hashValidator } = require("../Bcrypt/Hashing");
 
 
 authRoutes.post("/signup", async (req, res) => {
   try {
+    // console.log(User)
     console.log(req.body);
     const existingUser = await User.findOne({ email: req.body.email });
+    console.log(existingUser);
     if (!existingUser) {
       const value = await User.find().sort({ _id: -1 }).limit(1);
       const userid = parseInt(value[0].userid.split("D")[1]) + 1;
       console.log(value[0].userid.split("D")[1]);
       const hashPassword = await hashGenerate(req.body.password);
+      
       const user = new User({
         username: req.body.username,
         userid: "06PPD"+userid,
@@ -47,7 +50,7 @@ authRoutes.post("/login", async (req, res) => {
   try {
     console.log(req.body);
     // console.log(req.body);
-    const existingUser = await User.findOne({ email: req.body.email });
+    const existingUser = await User.findOne({ email: req.body.email })
     if (!existingUser) {
       res.status(400).json("Invalid Email id");
     } else {
@@ -86,7 +89,10 @@ authRoutes.get("/logout", async (req, res) => {
 });
 
 
-authRoutes.get("/protected", authVerify, (req, res) => {
-  res.send("I am protected route");
-});
+// authRoutes.get("/protected", authVerify, (req, res) => {
+//   res.send("I am protected route");
+// });
+
+
+
 module.exports = authRoutes;

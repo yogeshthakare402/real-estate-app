@@ -2,8 +2,8 @@ let express = require('express');
 // let multer = require('multer');
 let mongoose = require('mongoose');
 let router = express.Router();
-
-let AddProperty = require('../models/property');
+let User = require("../models/user");
+let Property = require('../models/property');
 
 router.post("/property", async (req, res) => {
     try {
@@ -13,19 +13,19 @@ router.post("/property", async (req, res) => {
         const daysLeft = parseInt(Math.random() * 50);
 
         console.log(req.body);
-        const add_property = await AddProperty.create({
+        const property = await Property.create({
             ppdId: ppd_id, 
             image: '',
             property: req.body.values.property, 
             contact: req.body.values.mobile,
             area: req.body.values.area, 
             views: views,
-            daysLeft: daysLeft
+            daysLeft: daysLeft,
         });
 
         res.status(200).json({
             status: "Success",
-            add_property
+            property
         })
 
     } catch (e) {

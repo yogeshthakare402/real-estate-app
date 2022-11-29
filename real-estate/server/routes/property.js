@@ -1,7 +1,8 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+// const {authVerify} = require("./Bcrypt/authVerify");
 const Property = require('../models/property');
-const User = require('../models/User');
+const User = require('../models/user');
 // const cloudinary = require('cloudinary').v2;
 const router = express.Router();
 
@@ -12,11 +13,13 @@ router.get('/property', async(req, res) => {
         console.log("I am inside get property");
         const {PageSize = 5} = req.params;
         //here we are rendering the image giveing it in ressponse
-        const property = await Property.find().populate('user');
+        const property = await Property.find().populate('users');
         res.json({
             status: "Sucess",
             property
         })
+        
+        
     } catch (e) {
         res.status(500).json({
             status: "Failed",

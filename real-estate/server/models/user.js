@@ -3,7 +3,6 @@
 // let value = 1200;
 const mongoose = require("mongoose");
 Schema = mongoose.Schema;
-ObjectId = Schema.ObjectId;
 const userSchema = new mongoose.Schema({
   userid: {
     type: String,
@@ -11,5 +10,7 @@ const userSchema = new mongoose.Schema({
   },
   email: { type: String, require: true, unique: true },
   password: { type: String, require: true },
+  // property : [{type : mongoose.Schema.Types.ObjectId, ref: "AddProperty"}]
 });
-module.exports = mongoose.model("User", userSchema);
+const userModel  = mongoose.model("User", userSchema);
+module.exports = userModel;

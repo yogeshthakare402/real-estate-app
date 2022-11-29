@@ -11,8 +11,8 @@ const mongoose = require('mongoose');
     views: {type: Number},
     status: {type: String, default: "Unsold"},
     daysLeft: {type:Number},
-    user : {type : Schema.Types.ObjectId, ref: "User"}
+    users : {type :mongoose.Schema.Types.ObjectId, ref: "Users"}
  })
 
-const addPropertyModel = mongoose.model("AddProperty", addPropertySchema);
+const addPropertyModel = mongoose.model("Property", addPropertySchema);
 module.exports = addPropertyModel;
