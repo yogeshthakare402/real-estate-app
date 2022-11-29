@@ -31,4 +31,4 @@ app.use("/api/users", authRoutes);
 app.use("/api/users", addPropertyRoutes);
 app.use("/api/users",propertyListRoutes);
 
-app.listen(8000, ()=>console.log('Server is running at 8000'))
+app.listen(process.env.PORT || 8000, ()=>console.log('Server is running at 8000'))
